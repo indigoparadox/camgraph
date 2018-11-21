@@ -53,9 +53,7 @@ typedef uint32_t GRAPHICS_HICOLOR;
 #endif /* USE_HICOLOR */
 
 typedef long GFX_COORD_PIXEL;
-#ifdef USE_FLOATS
-typedef int64_t GFX_COORD_FPP;
-#endif // USE_FLOATS
+typedef float GFX_COORD_FPP;
 
 typedef enum {
    GRAPHICS_ISO_ROTATE_90 = 90,
@@ -288,10 +286,8 @@ void graphics_set_pixel(
    GRAPHICS* g, GFX_COORD_PIXEL x, GFX_COORD_PIXEL y, GRAPHICS_COLOR pixel
 );
 
-#ifdef USE_FLOATS
 GFX_COORD_FPP graphics_multiply_fp( GFX_COORD_FPP value_a, GFX_COORD_FPP value_b );
 GFX_COORD_FPP graphics_divide_fp( GFX_COORD_FPP value_a, GFX_COORD_FPP value_b );
-#endif // USE_FLOATS
 
 #ifdef USE_HICOLOR
 GRAPHICS_HICOLOR graphics_get_hipixel(

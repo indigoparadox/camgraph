@@ -345,7 +345,7 @@ void graphics_draw_rect(
    rect.w = w,
    rect.h = h;
 
-   if( FALSE != filled ) {
+   if( filled ) {
       SDL_FillRect(
          g->surface,
          &rect,

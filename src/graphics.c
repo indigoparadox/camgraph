@@ -180,7 +180,7 @@ cleanup:
    return;
 }
 
-static float graphics_divide_fp( float value_a, float value_b ) {
+float graphics_divide_fp( float value_a, float value_b ) {
    float value_out;
 
    /* Additional layer of precision since we're multiplying. */
@@ -484,9 +484,9 @@ VBOOL graphics_raycast_point_is_infinite( const GRAPHICS_DELTA* point ) {
       0 > point->map_x ||
       0 > point->map_y
    ) {
-      return TRUE;
+      return VTRUE;
    }
-   return FALSE;
+   return VFALSE;
 }
 
 void graphics_raycast_wall_iterate(

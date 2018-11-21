@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug-Linux">
-				<Option output="../bin/Debug/camgraph" prefix_auto="1" extension_auto="1" />
-				<Option object_output="../obj/Debug/" />
+				<Option output="bin/Debug/camgraph" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -29,9 +29,9 @@
 			</Target>
 			<Target title="Debug-Linux-Allegro">
 				<Option platforms="Unix;" />
-				<Option output="../bin/Debug-Linux-Allegro/camgraph" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug-Linux-Allegro/camgraph" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="../obj/Debug-Linux-Allegro/" />
+				<Option object_output="obj/Debug-Linux-Allegro/" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -44,9 +44,9 @@
 			</Target>
 			<Target title="Debug-Linux-SDL">
 				<Option platforms="Unix;" />
-				<Option output="../bin/Debug-Linux-SDL/camgraph" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug-Linux-SDL/camgraph" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="../obj/Debug-Linux-SDL/" />
+				<Option object_output="obj/Debug-Linux-SDL/" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -59,9 +59,9 @@
 			</Target>
 			<Target title="Debug-Win32-GDI">
 				<Option platforms="Windows;" />
-				<Option output="../bin/Debug-Win32-GDI/camgraph" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug-Win32-GDI/camgraph" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="../obj/Debug-Win32-GDI/" />
+				<Option object_output="obj/Debug-Win32-GDI/" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />

@@ -6,27 +6,6 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
-			<Target title="Debug-Linux">
-				<Option output="bin/Debug/camgraph" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
-				<Option type="1" />
-				<Option compiler="gcc" />
-				<Compiler>
-					<Add option="-g" />
-				</Compiler>
-			</Target>
-			<Target title="Release-Linux">
-				<Option output="../bin/Release/camgraph" prefix_auto="1" extension_auto="1" />
-				<Option object_output="../obj/Release/" />
-				<Option type="1" />
-				<Option compiler="gcc" />
-				<Compiler>
-					<Add option="-O2" />
-				</Compiler>
-				<Linker>
-					<Add option="-s" />
-				</Linker>
-			</Target>
 			<Target title="Debug-Linux-Allegro">
 				<Option platforms="Unix;" />
 				<Option output="bin/Debug-Linux-Allegro/camgraph" prefix_auto="1" extension_auto="1" />
@@ -52,6 +31,7 @@
 				<Option createDefFile="1" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-DUSE_SDL_IMAGE" />
 				</Compiler>
 				<Linker>
 					<Add directory="../libvcol/bin/Debug-Linux" />
@@ -82,20 +62,14 @@
 		<Unit filename="src/graphics.h" />
 		<Unit filename="src/graphics/allegrog.c">
 			<Option compilerVar="CC" />
-			<Option target="Debug-Linux" />
-			<Option target="Release-Linux" />
 			<Option target="Debug-Linux-Allegro" />
 		</Unit>
 		<Unit filename="src/graphics/sdlg.c">
 			<Option compilerVar="CC" />
-			<Option target="Debug-Linux" />
-			<Option target="Release-Linux" />
 			<Option target="Debug-Linux-SDL" />
 		</Unit>
 		<Unit filename="src/graphics/win32g.c">
 			<Option compilerVar="CC" />
-			<Option target="Debug-Linux" />
-			<Option target="Release-Linux" />
 			<Option target="Debug-Win32-GDI" />
 		</Unit>
 		<Extensions>

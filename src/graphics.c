@@ -67,11 +67,13 @@ void graphics_bitmap_load(
 
    pixels_sz = ((header->width * header->height) / 2);
 
+#ifdef DEBUG
    assert( 'B' == data[0] && 'M' == data[1] );
    assert( file_header->size == data_sz );
    assert( 4 == header->bpp ); /* TODO: Polite error message. */
    assert( 0 == header->compression );
    assert( (file_header->offset + pixels_sz) <= data_sz );
+#endif /* DEBUG */
 
    *bitmap_out = mem_alloc( 1, struct GRAPHICS_BITMAP );
    lgc_null( *bitmap_out );
@@ -142,8 +144,10 @@ void graphics_draw_text(
    int i;
    GRAPHICS_RECT text_size;
 
+#ifdef DEBUG
    assert( NULL != g );
    assert( NULL != text );
+#endif /* DEBUG */
 
    switch( align ) {
    case GRAPHICS_TEXT_ALIGN_CENTER:
@@ -292,8 +296,10 @@ void graphics_draw_line(
 void graphics_surface_free( GRAPHICS* g ) {
    lgc_null( g );
    graphics_surface_cleanup( g );
+#ifdef DEBUG
    assert( NULL == g->palette );
    assert( NULL == g->surface );
+#endif /* DEBUG */
    mem_free( g );
 cleanup:
    return;
@@ -326,28 +332,6 @@ void graphics_surface_set_h( GRAPHICS* g, GFX_COORD_PIXEL h ) {
 void graphics_surface_set_w( GRAPHICS* g, GFX_COORD_PIXEL w ) {
    g->w = w;
    g->fp_w = graphics_precise( w );
-}
-
-/** \brief Put the spritesheet position for gid on the spritesheet g_sprites in
- *         the rectangle sprite_frame. The rectangle must already have the
- *         correct sprite width and height set when passed.
- * \param
- * \param
- */
-void graphics_get_spritesheet_pos_ortho(
-   GRAPHICS* g_sprites, GRAPHICS_RECT* sprite_frame, size_t gid
-) {
-   int tiles_wide = 0;
-
-   lgc_null( g_sprites );
-
-   tiles_wide = g_sprites->w / sprite_frame->w;
-
-   sprite_frame->y = ((gid) / tiles_wide) * sprite_frame->h;
-   sprite_frame->x = ((gid) % tiles_wide) * sprite_frame->w;
-
-cleanup:
-   return;
 }
 
 void graphics_shrink_rect( GRAPHICS_RECT* rect, GFX_COORD_PIXEL shrink_by ) {

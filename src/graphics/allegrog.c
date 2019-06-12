@@ -57,7 +57,9 @@ static int graphics_fmem_fclose( void* userdata ) {
    if( info->alloc > info->length ) {
       /* FIXME: Soft realloc. */
       info->block = mem_realloc( info->block, info->length, unsigned char );
+#ifdef DEBUG
       assert( NULL !=info->block );
+#endif /* DEBUG */
       info->alloc = info->length;
    }
 
@@ -111,7 +113,9 @@ static long graphics_fmem_fread( void* p, long n, void* userdata ) {
    memcpy( p, info->block + info->offset, actual );
    info->offset += actual;
 
+#ifdef DEBUG
    assert( info->offset <= info->length );
+#endif /* DEBUG */
 
    return actual;
 }
@@ -135,7 +139,9 @@ static int graphics_fmem_putc( int c, void* userdata ) {
          info->alloc *= 2;
          /* FIXME: Soft realloc. */
          info->block = mem_realloc( info->block, info->alloc, unsigned char );
+#ifdef DEBUG
          assert( NULL !=info->block );
+#endif /* DEBUG */
       }
       info->length++;
    }
@@ -181,7 +187,9 @@ static int graphics_fmem_fseek( void* userdata, int offset ) {
 
    info->offset += actual;
 
+#ifdef DEBUG
    assert( info->offset < info->length );
+#endif /* DEBUG */
 
    if( offset == actual ) {
       return 0;
@@ -651,4 +659,8 @@ void graphics_sleep( uint16_t milliseconds ) {
 
 uint32_t graphics_get_ticks() {
    return allegro_ticks;
+}
+
+int graphics_surface_get_width( GRAPHICS* g ) {
+   return g->w;
 }

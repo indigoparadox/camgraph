@@ -7,9 +7,11 @@
 #endif // USE_FLOATS
 
 #include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
 #include <string.h>
 #include <bstrlib/bstrlib.h>
-#include <vbool.h>
+//#include <vbool.h>
 #include <libvcol.h>
 
 //#include "scaffold.h"
@@ -174,7 +176,7 @@ typedef struct {
 } GFX_RAY_FLOOR;
 
 #define graphics_clear_screen( g, color ) \
-   graphics_draw_rect( g, 0, 0, g->w, g->h, color, TRUE )
+   graphics_draw_rect( g, 0, 0, g->w, g->h, color, true )
 
 #define graphics_surface_new( g, x, y, w, h ) \
     g = mem_alloc( 1, GRAPHICS ); \
@@ -334,6 +336,7 @@ void graphics_isometric_tile_rotate(
 void graphics_transform_isometric(
    GRAPHICS* g, float tile_x, float tile_y, int* screen_x, int* screen_y
 );
+int graphics_surface_get_width( GRAPHICS* g );
 
 #endif /* DISABLE_ISOMETRIC */
 

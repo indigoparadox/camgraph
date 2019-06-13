@@ -136,7 +136,7 @@ cleanup:
 void graphics_draw_text(
    GRAPHICS* g, int x_start, int y_start,
    GRAPHICS_TEXT_ALIGN align, GRAPHICS_COLOR color, GRAPHICS_FONT_SIZE size,
-   const bstring text, VBOOL cursor
+   const bstring text, bool cursor
 ) {
    int x = x_start,
       y = y_start;
@@ -461,16 +461,16 @@ void graphics_raycast_wall_create(
    }
 }
 
-VBOOL graphics_raycast_point_is_infinite( const GRAPHICS_DELTA* point ) {
+bool graphics_raycast_point_is_infinite( const GRAPHICS_DELTA* point ) {
    if(
       point->map_x >= point->map_w ||
       point->map_y >= point->map_h ||
       0 > point->map_x ||
       0 > point->map_y
    ) {
-      return VTRUE;
+      return true;
    }
-   return VFALSE;
+   return false;
 }
 
 void graphics_raycast_wall_iterate(

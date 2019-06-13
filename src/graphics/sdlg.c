@@ -332,7 +332,7 @@ unsigned char* graphics_export_image_data( GRAPHICS* g, size_t* out_len ) {
 
 void graphics_draw_rect(
    GRAPHICS* g, GFX_COORD_PIXEL x, GFX_COORD_PIXEL y,
-   GFX_COORD_PIXEL w, GFX_COORD_PIXEL h, GRAPHICS_COLOR color_i, VBOOL filled
+   GFX_COORD_PIXEL w, GFX_COORD_PIXEL h, GRAPHICS_COLOR color_i, bool filled
 ) {
    SDL_Rect rect;
    SDL_Color* color = &(graphics_stock_colors[color_i]);
@@ -364,14 +364,14 @@ void graphics_draw_triangle(
    GFX_COORD_PIXEL x1, GFX_COORD_PIXEL y1,
    GFX_COORD_PIXEL x2, GFX_COORD_PIXEL y2,
    GFX_COORD_PIXEL x3, GFX_COORD_PIXEL y3,
-   GRAPHICS_COLOR color, VBOOL filled
+   GRAPHICS_COLOR color, bool filled
 ) {
    /* TODO */
 }
 
 void graphics_draw_circle(
    GRAPHICS* g, GFX_COORD_PIXEL x, GFX_COORD_PIXEL y,
-   GFX_COORD_PIXEL radius, GRAPHICS_COLOR color, VBOOL filled
+   GFX_COORD_PIXEL radius, GRAPHICS_COLOR color, bool filled
 ) {
    /* TODO */
 }

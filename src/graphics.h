@@ -216,11 +216,11 @@ __attribute__ ((warn_unused_result))
 void graphics_draw_text(
    GRAPHICS* g, int x_start, int y_start,
    GRAPHICS_TEXT_ALIGN align, GRAPHICS_COLOR color, GRAPHICS_FONT_SIZE size,
-   const bstring text, VBOOL cursor
+   const bstring text, bool cursor
 );
 void graphics_draw_rect(
    GRAPHICS* g, GFX_COORD_PIXEL x, GFX_COORD_PIXEL y,
-   GFX_COORD_PIXEL w, GFX_COORD_PIXEL h, GRAPHICS_COLOR color, VBOOL filled
+   GFX_COORD_PIXEL w, GFX_COORD_PIXEL h, GRAPHICS_COLOR color, bool filled
 );
 void graphics_draw_line(
    GRAPHICS* g, GFX_COORD_PIXEL x1, GFX_COORD_PIXEL y1,
@@ -231,11 +231,11 @@ void graphics_draw_triangle(
    GFX_COORD_PIXEL x1, GFX_COORD_PIXEL y1,
    GFX_COORD_PIXEL x2, GFX_COORD_PIXEL y2,
    GFX_COORD_PIXEL x3, GFX_COORD_PIXEL y3,
-   GRAPHICS_COLOR color, VBOOL filled
+   GRAPHICS_COLOR color, bool filled
 );
 void graphics_draw_circle(
    GRAPHICS* g, GFX_COORD_PIXEL x, GFX_COORD_PIXEL y,
-   GFX_COORD_PIXEL radius, GRAPHICS_COLOR color, VBOOL filled
+   GFX_COORD_PIXEL radius, GRAPHICS_COLOR color, bool filled
 );
 void graphics_measure_text(
    GRAPHICS* g, GRAPHICS_RECT* r, GRAPHICS_FONT_SIZE size, const bstring text
@@ -299,7 +299,7 @@ GRAPHICS_HICOLOR graphics_get_hipixel(
 
 #ifndef DISABLE_MODE_POV
 
-VBOOL graphics_raycast_point_is_infinite( const GRAPHICS_DELTA* point );
+bool graphics_raycast_point_is_infinite( const GRAPHICS_DELTA* point );
 void graphics_raycast_wall_create(
    GRAPHICS_RAY* ray, int x, int map_w, int map_h,
    const GRAPHICS_PLANE* plane_pos,

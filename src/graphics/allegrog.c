@@ -391,7 +391,7 @@ void graphics_set_image_data( GRAPHICS* g, const unsigned char* data,
 #ifdef USE_ALLEGRO_BITMAP
    GRAPHICS_FMEM_INFO* fmem_info = NULL;
    PACKFILE* fmem = NULL;
-   VBOOL close_packfile = TRUE;
+   bool close_packfile = TRUE;
 
    fmem_info = (GRAPHICS_FMEM_INFO*)calloc( 1, sizeof( GRAPHICS_FMEM_INFO ) );
    lgc_null( fmem_info );
@@ -527,7 +527,7 @@ cleanup:
 void graphics_draw_rect(
    GRAPHICS* g, GFX_COORD_PIXEL x, GFX_COORD_PIXEL y,
    GFX_COORD_PIXEL w, GFX_COORD_PIXEL h,
-   GRAPHICS_COLOR color, VBOOL filled
+   GRAPHICS_COLOR color, bool filled
 ) {
    if( NULL == g->surface ) {
       goto cleanup;
@@ -555,7 +555,7 @@ void graphics_draw_triangle(
    GFX_COORD_PIXEL x1, GFX_COORD_PIXEL y1,
    GFX_COORD_PIXEL x2, GFX_COORD_PIXEL y2,
    GFX_COORD_PIXEL x3, GFX_COORD_PIXEL y3,
-   GRAPHICS_COLOR color, VBOOL filled
+   GRAPHICS_COLOR color, bool filled
 ) {
    if( FALSE != filled ) {
       triangle( g->surface, x1, y1, x2, y2, x3, y3, color );
@@ -568,7 +568,7 @@ void graphics_draw_triangle(
 
 void graphics_draw_circle(
    GRAPHICS* g, GFX_COORD_PIXEL x, GFX_COORD_PIXEL y,
-   GFX_COORD_PIXEL radius, GRAPHICS_COLOR color, VBOOL filled
+   GFX_COORD_PIXEL radius, GRAPHICS_COLOR color, bool filled
 ) {
    if( FALSE != filled ){
       circlefill( g->surface, x, y, radius, color );

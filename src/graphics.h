@@ -198,6 +198,7 @@ void graphics_surface_free( GRAPHICS* g );
 void graphics_surface_cleanup( GRAPHICS* g );
 void graphics_surface_set_w( GRAPHICS* g, GFX_COORD_PIXEL w );
 void graphics_surface_set_h( GRAPHICS* g, GFX_COORD_PIXEL h );
+GFX_COORD_PIXEL graphics_surface_get_w( GRAPHICS* g );
 void graphics_flip_screen( GRAPHICS* g );
 void graphics_shutdown( GRAPHICS* g );
 void graphics_set_window_title( GRAPHICS* g, bstring title, void* icon );

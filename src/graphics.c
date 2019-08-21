@@ -334,6 +334,10 @@ void graphics_surface_set_w( GRAPHICS* g, GFX_COORD_PIXEL w ) {
    g->fp_w = graphics_precise( w );
 }
 
+GFX_COORD_PIXEL graphics_surface_get_w( GRAPHICS* g ) {
+   return g->w;
+}
+
 void graphics_shrink_rect( GRAPHICS_RECT* rect, GFX_COORD_PIXEL shrink_by ) {
    rect->x += shrink_by;
    rect->y += shrink_by;
